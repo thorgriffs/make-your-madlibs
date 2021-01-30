@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "ls",
+=======
+  "name": "make-your-madlibs",
+>>>>>>> f57de911b622629dd511df1013ec51dbffae025f
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,6 +15,10 @@
     "type": "git",
     "url": "git+https://github.com/thorgriffs/make-your-madlibs.git"
   },
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> f57de911b622629dd511df1013ec51dbffae025f
   "author": "",
   "license": "ISC",
   "bugs": {
