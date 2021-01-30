@@ -32,5 +32,12 @@
   "bugs": {
     "url": "https://github.com/thorgriffs/make-your-madlibs/issues"
   },
-  "homepage": "https://github.com/thorgriffs/make-your-madlibs#readme"
+  "homepage": "https://github.com/thorgriffs/make-your-madlibs#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.0"
+  }
 }
