@@ -1,6 +1,10 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "name": "ls",
+=======
+  "name": "make-your-madlibs",
+>>>>>>> f57de911b622629dd511df1013ec51dbffae025f
 =======
   "name": "make-your-madlibs",
 >>>>>>> f57de911b622629dd511df1013ec51dbffae025f
@@ -16,6 +20,10 @@
     "url": "git+https://github.com/thorgriffs/make-your-madlibs.git"
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  "keywords": [],
+>>>>>>> f57de911b622629dd511df1013ec51dbffae025f
 =======
   "keywords": [],
 >>>>>>> f57de911b622629dd511df1013ec51dbffae025f
