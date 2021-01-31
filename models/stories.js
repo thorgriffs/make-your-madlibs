@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require("sequelize/types");
 
-//create AllStory model
+//create stories model
 module.exports = (sequelize, DataTypes) => {
     const Stories = sequelize.define('Stories', {
         id: {
