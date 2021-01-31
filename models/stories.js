@@ -1,5 +1,3 @@
-const { Model, DataTypes } = require("sequelize/types");
-
 //create stories model
 module.exports = (sequelize, DataTypes) => {
     const Stories = sequelize.define('Stories', {
