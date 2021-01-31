@@ -1,4 +1,4 @@
-//create model
+//create Template story model
 module.exports = (sequelize, DataTypes) => {
     const Template = sequelize.define('Template', {
         id: {
