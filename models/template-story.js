@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
         },
         title: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
-        storyBody: {
-            type: DataTypes.TEXT,
+        templateBody: {
+            type: DataTypes.STRING,
             allowNull: false,
         }
     });
