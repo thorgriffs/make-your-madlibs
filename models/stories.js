@@ -6,8 +6,12 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true,
         },
-        storyBody: {
+        title: {
             type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        storyBody: {
+            type: DataTypes.STRING,
             allowNull: false,
         },
         upvotes: {
