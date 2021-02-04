@@ -17,6 +17,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+
 // // Handlebars
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 // app.set("view engine", "handlebars");
@@ -25,7 +27,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // // Invoke routes
-// htmlRouter(app);
+require("./routes/html-routes.js")(app);
 // templatesRouter(app);
 // storiesRouter(app);
 
