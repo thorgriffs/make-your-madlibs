@@ -15,11 +15,14 @@ body,html{
 
 .jumbotron{
     margin-top: 5%;
-    border-radius: 0 !important;
 }
 
 
 
 p {
     line-height: 3rem;
+}
+
+.btn {
+  margin-top: 5%;
 }
