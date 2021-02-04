@@ -1,41 +1,33 @@
-// Currently this file returns an array of the blank fields out of a template that is hardcoded into the "blanks" variable
+// Currently this file returns an array of blank fields for templates (var clientData)
 // To do:
-// Need to find a way to pull the templates out of the database, loop over them, and pass them into getBlanks()
-// Then return an array of objects that has template title and the blank fields for each template in the db to be rendered on the main page,
-// something like:
-// [  
-// 	{
-//         id: 1,
-//         title: "Template 1 Title",
-//     	blanks: [      
-// 			{ category: 'Cat1', variant: 'whatever' },
-// 			{ category: 'Cat2', variant: 'another' }
-//     	]  
-// 	},  
-// 	{    
-//         id: 2,
-//         title: "Template 2 Title",
-// 		blanks: [        
-// 			{ category: 'Cat2', variant: '??' },
-// 			{ category: 'Cat3', variant: '??' }
-// 	      ]
-// 	 }
-// ]
-
-
-// var madLibs = [{ title: '', madLib: '' }, { title: '', madLib: ''}] //from database0var clientData = []
-// for (let i = 0; i < madLibs.length; i++) {
-//     var madLib = madLibs[i];
-//     var madLibForClient = { title: madLib.title }  
-//     madLibForClient.blanks = getBlanks(madLib.madLib);  
-//     clientData.push(madLibForClient);
-// }
+// Need to find a way to pull the templates out of the database and pass into the loop
 
 const mtp = require('madlibs-template-parser')
-var blanks = getBlanks("This is some <descriptiveAdjective> <singularNoun> used to <rootVerb> this <singularNoun> using the parser");
 
-function getBlanks(madlib) {
-    var paragraphs = mtp(madlib);
+var blankTemplates = [
+    {
+        id: 1,
+        title: 'Test Madlib 1',
+        madLib: 'This is some <descriptiveAdjective> <singularNoun> used'
+    },
+    { 
+        id: 2,
+        title: 'Test Madlib 2',
+        madLib: 'to <rootVerb> this <singularNoun> using the parser'
+    }
+] //from database
+
+var clientData = []
+
+for (let i = 0; i < blankTemplates.length; i++) {
+    var template = blankTemplates[i];
+    var madLibForClient = { id: template.id, title: template.title}  
+    madLibForClient.blanks = getBlanks(template.madLib);      
+    clientData.push(madLibForClient);
+}
+
+function getBlanks(template) {
+    var paragraphs = mtp(template);
     var firstParagraph = paragraphs[0];
     var blanks = [];
 
@@ -48,6 +40,6 @@ function getBlanks(madlib) {
 
     return blanks;
 };
-console.log(blanks);
 
-
+console.log(clientData[0]);
+console.log(clientData[1]);
