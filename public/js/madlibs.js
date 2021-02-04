@@ -5,19 +5,31 @@
 // something like:
 // [  
 // 	{
-// 		title: "Template 1 Title",
+//         id: 1,
+//         title: "Template 1 Title",
 //     	blanks: [      
 // 			{ category: 'Cat1', variant: 'whatever' },
 // 			{ category: 'Cat2', variant: 'another' }
 //     	]  
 // 	},  
-// 	{    title: "Template 2 Title",
-// 		 blanks: [        
+// 	{    
+//         id: 2,
+//         title: "Template 2 Title",
+// 		blanks: [        
 // 			{ category: 'Cat2', variant: '??' },
 // 			{ category: 'Cat3', variant: '??' }
 // 	      ]
 // 	 }
 // ]
+
+
+// var madLibs = [{ title: '', madLib: '' }, { title: '', madLib: ''}] //from database0var clientData = []
+// for (let i = 0; i < madLibs.length; i++) {
+//     var madLib = madLibs[i];
+//     var madLibForClient = { title: madLib.title }  
+//     madLibForClient.blanks = getBlanks(madLib.madLib);  
+//     clientData.push(madLibForClient);
+// }
 
 const mtp = require('madlibs-template-parser')
 var blanks = getBlanks("This is some <descriptiveAdjective> <singularNoun> used to <rootVerb> this <singularNoun> using the parser");
@@ -37,3 +49,5 @@ function getBlanks(madlib) {
     return blanks;
 };
 console.log(blanks);
+
+
