@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 3306;
 // Require models for syncing
 const db = require("./models");
 
+app.use(express.static("public"));
+
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
