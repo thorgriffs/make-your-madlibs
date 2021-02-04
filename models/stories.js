@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Stories = sequelize.define('Stories', {
         id: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
         },
         upvotes: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
         }
     });
 
