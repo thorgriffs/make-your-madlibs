@@ -7,6 +7,7 @@ module.exports = (app) => {
     // index route to display templates...?
     app.get('/', (req, res) =>
       res.sendFile(path.join(__dirname, '../public/templates.html'))
+      
     );
   
     // stories route to display completed stories
