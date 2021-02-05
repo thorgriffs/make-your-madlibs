@@ -1,5 +1,5 @@
 const path = require('path');
-const db = require("./models");
+const db = require("../models");
 const madlibs = require('../lib/madlibs');
 
 // Routes
@@ -11,7 +11,7 @@ module.exports = (app) => {
     //retrieve all but only display title and teaser
     const templates = db.Templates.findAll({});
     //add in handlebars name here
-    res.render("index", templates);
+    res.render("index", { templates });
   });
 
   app.get("/madlibs/:id", async (req, res) => {
@@ -27,15 +27,22 @@ module.exports = (app) => {
     // need the logic to get the blanks in order
     // Read the blanks. Fill in the story.
     // Save the story.
+    await db.Stories.create({
+      title: req.params.id,
+      storyBody: "",
+    })
     // Redirect to /stories/:id
+    return res.redirect("/stories/:id");
   });
 
   app.get("/stories/:id", async (req, res) => {
     // Get the completed story from the db
-    // Fill in a handlebars template
-    // const story = await db.Stories.findByPk(id)
-    // res.render('story', { story });
+    db.Stories.findByPk({ id });
+    // Fill in a handlebars template, add in handlebars file name
+    const completedStory = db.Stories.findByPk({ id });
+    res.render("", { completedStory });
   });
+
   // not sure if we need another route for user to enter data in the word fields...
 
 };
