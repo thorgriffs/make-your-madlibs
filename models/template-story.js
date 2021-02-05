@@ -5,6 +5,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        teaser: {
+            type: DataTypes.TEXT,
+        },
         templateBody: {
             type: DataTypes.TEXT,
             allowNull: false,
