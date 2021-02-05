@@ -2,16 +2,20 @@
 module.exports = (sequelize, DataTypes) => {
     const Stories = sequelize.define('Stories', {
         id: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
-        storyBody: {
+        title: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
+        storyBody: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         upvotes: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
         }
     });
 

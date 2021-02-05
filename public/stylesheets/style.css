@@ -1,0 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,900,700,500);
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+body,html{
+  width: 100%;
+  height: 100%;
+  background: #EF6C00;
+  background-image: url('http://michaeltruong.ca/images/upvote-bg.png');
+  background-size: 100%;
+}
+
+
+.jumbotron{
+    margin-top: 5%;
+}
+
+
+
+p {
+    line-height: 3rem;
+}
+
+.btn {
+  margin-top: 5%;
+}

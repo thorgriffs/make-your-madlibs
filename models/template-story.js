@@ -1,20 +1,20 @@
 //create Template story model
 module.exports = (sequelize, DataTypes) => {
-    const Template = sequelize.define('Template', {
+    const Templates = sequelize.define('Templates', {
         id: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true,
         },
         title: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
-        storyBody: {
-            type: DataTypes.TEXT,
+        templateBody: {
+            type: DataTypes.STRING,
             allowNull: false,
         }
     });
 
-    return Template;
+    return Templates;
 }
