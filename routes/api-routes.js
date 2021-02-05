@@ -9,9 +9,10 @@ module.exports = (app) => {
   // index route to display story title and teaser
   app.get('/', (req, res) => {
     //retrieve all but only display title and teaser
-    const templates = db.Templates.findAll({});
-    //add in handlebars name here
-    res.render("index", { templates });
+    db.Templates.findAll({})
+      // .then((dbTemplates) => res.render("index", { dbTemplates })) //add this line after handlebars created
+
+      .then((dbTemplates) => res.json(dbTemplates)); //worked on postman, delete after handlebars created
   });
 
   app.get("/madlibs/:id", async (req, res) => {
@@ -29,10 +30,12 @@ module.exports = (app) => {
     // Save the story.
     await db.Stories.create({
       title: req.params.id,
-      storyBody: "",
-    })
+      storyBody: req.params.id,
+      createdAt: new Date(),
+      updatedAt: new Data(),
+    });
     // Redirect to /stories/:id
-    return res.redirect("/stories/:id");
+    // return res.redirect("/stories/:id");
   });
 
   app.get("/stories/:id", async (req, res) => {
