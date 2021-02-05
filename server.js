@@ -2,6 +2,8 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 const { Sequelize } = require('sequelize');
 
+ 
+
 // const htmlRouter = require("./routes/html-routes.js");
 // const templatesRouter = require("./routes/templates-api-routes.js");
 // const storiesRouter = require("./routes/stories-api-routes");
@@ -18,15 +20,32 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// // Handlebars
-// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-// app.set("view engine", "handlebars");
+// Handlebars routes
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+ 
+app.get('/', function (req, res) {
+    res.render('index');
+});
+
+app.get('/stories', function (req, res) {
+    res.render('stories');
+});
+
+app.get('/create', function (req, res) {
+    res.render('create');
+});
+
+app.get('/result', function (req, res) {
+    res.render('result');
+});
+
 
 // Serve static content from the "public" directory
 app.use(express.static("public"));
 
 // // Invoke routes
-require("./routes/html-routes.js")(app);
+
 // templatesRouter(app);
 // storiesRouter(app);
 
