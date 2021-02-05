@@ -1,5 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
+const { Sequelize } = require('sequelize');
 
 // const htmlRouter = require("./routes/html-routes.js");
 // const templatesRouter = require("./routes/templates-api-routes.js");
@@ -16,8 +17,6 @@ app.use(express.static("public"));
 // Parse application body as JSON
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-
 
 // // Handlebars
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -42,6 +41,6 @@ require("./routes/html-routes.js")(app);
 // storiesRouter(app);
 
 // Start server listening
-app.listen(PORT, function () {
-    console.log("Server listening on: http://localhost:" + PORT);
+db.sequelize.sync({ force: true }).then(() => {
+    app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
