@@ -7,11 +7,11 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
         },
         title: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         storyBody: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         upvotes: {
@@ -21,3 +21,5 @@ module.exports = (sequelize, DataTypes) => {
 
     return Stories;
 }
+
+
