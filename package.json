@@ -22,6 +22,7 @@
   "dependencies": {
     "bad-words": "^3.0.4",
     "dotenv": "^8.2.0",
+    "eslint": "^7.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "madlibs-template-parser": "^0.1.1",
