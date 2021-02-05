@@ -45,7 +45,9 @@ module.exports = (app) => {
     await db.Stories.findByPk({
       where: { id: req.params.id } // or just id?
     }).then((dbStories) =>
-      res.render("", { dbStories }) // Fill in a handlebars template, add in handlebars file name
+      res.render("", { dbStories }
+      )); // Fill in a handlebars template, add in handlebars file name
+
   });
 
   // get route to render all stories
