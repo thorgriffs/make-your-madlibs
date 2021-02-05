@@ -25,9 +25,16 @@ app.use(express.json());
 
 // Serve static content from the "public" directory
 app.use(express.static("public"));
+
+//handlebars
 app.get('/', (req,res) => {
     res.render('index')
 });
+app.get('/main', (req,res) => {
+    res.render('main')
+});
+
+
 
 // // Invoke routes
 require("./routes/html-routes.js")(app);
