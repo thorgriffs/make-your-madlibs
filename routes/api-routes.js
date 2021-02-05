@@ -7,9 +7,9 @@ module.exports = (app) => {
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route to display story title and teaser
-  app.get('/', (req, res) => {
+  app.get('/', async (req, res) => {
     //retrieve all but only display title and teaser
-    db.Templates.findAll({})
+    await db.Templates.findAll({})
       // .then((dbTemplates) => res.render("index", { dbTemplates })) //add this line after handlebars created
 
       .then((dbTemplates) => res.json(dbTemplates)); //worked on postman, delete after handlebars created
@@ -29,13 +29,15 @@ module.exports = (app) => {
     // Read the blanks. Fill in the story.
     // Save the story.
     await db.Stories.create({
-      title: req.params.id,
-      storyBody: req.params.id,
-      createdAt: new Date(),
-      updatedAt: new Data(),
-    });
+      title: req.body.title,
+      storyBody: req.body.storyBody,
+    }).then((dbStories) => {
+      res.json(dbStories); //need to change this line to handlebars after handlebars created
+    }).catch((err) => {
+      if (err) throw err;
+    })
     // Redirect to /stories/:id
-    // return res.redirect("/stories/:id");
+    return res.redirect("/stories/:id");
   });
 
   app.get("/stories/:id", async (req, res) => {
