@@ -23,7 +23,7 @@ module.exports = (app) => {
     res.render("madlib", { blanks });
   });
 
-  app.post("/madlibs/:id", async (req, res) => {
+  app.post("/madlibs/:id", async (req, res) => { //id?
     // req.body.... with the field names attached
     // need the logic to get the blanks in order
     // Read the blanks. Fill in the story.
@@ -42,12 +42,12 @@ module.exports = (app) => {
 
   app.get("/stories/:id", async (req, res) => {
     // Get the completed story from the db
-    db.Stories.findByPk({ id });
-    // Fill in a handlebars template, add in handlebars file name
-    const completedStory = db.Stories.findByPk({ id });
-    res.render("", { completedStory });
+    await db.Stories.findByPk({
+      where: { id: req.params.id } // or just id?
+    }).then((dbStories) =>
+      res.render("", { dbStories }) // Fill in a handlebars template, add in handlebars file name
   });
 
-  // not sure if we need another route for user to enter data in the word fields...
+  // get route to render all stories
 
 };
