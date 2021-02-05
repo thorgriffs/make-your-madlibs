@@ -1,5 +1,5 @@
 const path = require('path');
-const db = require("./models");
+const db = require("../models");
 const madlibs = require('../lib/madlibs');
 
 // Routes
