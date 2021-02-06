@@ -28,7 +28,7 @@ module.exports = (app) => {
     const blanks = madlibs.getBlanks(template);
 
     // Render the blanks in a form via handlebars (each helper)
-    res.render("create", { blanks });
+    // ？ where to connec to .then(() => res.render("create", { blanks });
   });
 
   // POST route for creating story and create in db
@@ -60,7 +60,11 @@ module.exports = (app) => {
     }) // Fill in a handlebars template, add in handlebars file name
   });
 
-  // get route to render all stories
-
+  // GET route to render all stories
+  app.get("/stories", (req, res) => {
+    db.Stories.findAll({})
+      .then((dbStories) =>
+        res.render("stories", { dbStories }));
+  })
 
 };
