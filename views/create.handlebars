@@ -12,12 +12,12 @@
         <form>
           {{#each blanks}}
           <div class="form-group row">
-            <label for="{{this.index}}" class="col-sm-6 col-form-label">
+            <label for="blank-{{this.index}}" class="col-sm-6 col-form-label">
               {{this.variant}} {{this.category}}
             </label>
             <div class="col-sm-6">
-              <input id="{{id}}" type="hidden">
-              <input id="{{this.index}}" type="text" class="form-control">
+              <input name="template-{{id}}" type="hidden">
+              <input id="blank-{{@index}}" name="{{@index}}" type="text" class="form-control">
             </div>
           </div>
         </form>
