@@ -24,12 +24,21 @@ module.exports = (app) => {
 
   // GET route on create page to display form for user input
   app.get("/create/:id", async (req, res) => {
-    const template = await db.Templates.findByPk(req.params.id);
-    const blanks = madlibs.getBlanks(template);
-
-    // Render the blanks in a form via handlebars (each helper)
-    // ？ where to connec to .then(() => res.render("create", { blanks });
+    try {
+      const template = await db.Templates.findByPk(req.params.id);
+      const blanks = madlibs.getBlanks(template);
+      res.render("create", { blanks, id: req.params.id });
+    } catch (err) {
+      console.log('An error occurred', err);
+    }
   });
+
+  //try catch statement
+
+  // Render the blanks in a form via handlebars (each helper)
+  // template.then((blanks) => {  dont need
+
+
 
   // POST route for creating story and create in db
   app.post("/create/:id", async (req, res) => { //id?
@@ -66,5 +75,4 @@ module.exports = (app) => {
       .then((dbStories) =>
         res.render("stories", { dbStories }));
   })
-
 };
