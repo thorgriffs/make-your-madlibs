@@ -24,12 +24,20 @@ module.exports = (app) => {
 
   // GET route on create page to display form for user input
   app.get("/create/:id", async (req, res) => {
-    const template = await db.Templates.findByPk(req.params.id);
-    const blanks = madlibs.getBlanks(template);
-
-    // Render the blanks in a form via handlebars (each helper)
-    // ？ where to connec to .then(() => res.render("create", { blanks });
+    try {
+      const template = await db.Templates.findByPk(req.params.id);
+      const blanks = madlibs.getBlanks(template);
+      res.render("create", { blanks, id: req.params.id });
+    } catch (err) {
+      console.log('An error occurred', err);
+    }
   });
+
+  //try catch statement
+
+  // Render the blanks in a form via handlebars (each helper)
+  // template.then((blanks) => {  dont need
+
 
   // POST route for creating story and create in db
   app.post("/create/:id", async (req, res) => { //id?
@@ -37,6 +45,21 @@ module.exports = (app) => {
     // need the logic to get the blanks in order
     // Read the blanks. Fill in the story.
     // Save the story.
+
+    req.body // { "1": "word", "2": "formId"}
+    let templateId;
+    let blanks = [];
+    for (const field in req.body) {
+      const number = Number(field);
+      if (isNaN(number)) {
+        templateId = req.body[field];
+      } else {
+        blanks[number] = req.body[field];
+      }
+    }
+    // use form story function here with blanks and id
+    // gives us back the string to make the storyBody
+
     await db.Stories.create({
       title: req.body.title,
       storyBody: req.body.storyBody,
@@ -66,5 +89,4 @@ module.exports = (app) => {
       .then((dbStories) =>
         res.render("stories", { dbStories }));
   })
-
 };
