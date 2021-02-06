@@ -39,13 +39,27 @@ module.exports = (app) => {
   // template.then((blanks) => {  dont need
 
 
-
   // POST route for creating story and create in db
   app.post("/create/:id", async (req, res) => { //id?
     // req.body.... with the field names attached
     // need the logic to get the blanks in order
     // Read the blanks. Fill in the story.
     // Save the story.
+
+    req.body // { "1": "word", "2": "formId"}
+    let templateId;
+    let blanks = [];
+    for (const field in req.body) {
+      const number = Number(field);
+      if (isNaN(number)) {
+        templateId = req.body[field];
+      } else {
+        blanks[number] = req.body[field];
+      }
+    }
+    // use form story function here with blanks and id
+    // gives us back the string to make the storyBody
+
     await db.Stories.create({
       title: req.body.title,
       storyBody: req.body.storyBody,
