@@ -52,7 +52,7 @@ module.exports = (app) => {
   app.get("/result/:id", async (req, res) => {
     // Get the completed story from the db
     await db.Stories.findByPk({
-      where: { id: req.params.id } // or just id?
+      where: { id: req.params.id } // or just req.params.id?
     }).then((dbStories) =>
       res.render("result", { dbStories })
     ).catch((err) => {
