@@ -83,9 +83,12 @@ module.exports = (app) => {
   });
 
   // GET route to render all stories
-  app.get("/stories", (req, res) => {
-    db.Stories.findAll({})
-      .then((dbStories) =>
-        res.render("stories", { dbStories }));
+  app.get("/stories", async (req, res) => {
+    try {
+      const stories = await db.Stories.findAll({});
+      res.render("stories", { stories });
+    } catch (err) {
+      console.log('An error occurred:', err);
+    }
   })
 };
