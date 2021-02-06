@@ -14,12 +14,12 @@ module.exports = (app) => {
   // GET route on index page to display story title and teaser
   app.get('/', async (req, res) => {
     //retrieve all but only display title and teaser
-    const templates = await db.Templates.findAll({});
-
-    templates.then((dbTemplates) => res.render("index", { dbTemplates }))
-      .catch((err) => {
-        if (err) throw err;
-      })
+    try {
+      const templates = await db.Templates.findAll({});
+      res.render("index", { templates });
+    } catch (err) {
+      console.log('An error occurred:', err);
+    }
   });
 
   // GET route on create page to display form for user input
@@ -29,7 +29,7 @@ module.exports = (app) => {
       const blanks = madlibs.getBlanks(template);
       res.render("create", { blanks, id: req.params.id });
     } catch (err) {
-      console.log('An error occurred', err);
+      console.log('An error occurred:', err);
     }
   });
 
@@ -74,13 +74,12 @@ module.exports = (app) => {
 
   app.get("/result/:id", async (req, res) => {
     // Get the completed story from the db
-    await db.Stories.findByPk({
-      where: { id: req.params.id } // or just req.params.id?
-    }).then((dbStories) =>
-      res.render("result", { dbStories })
-    ).catch((err) => {
-      if (err) throw err;
-    }) // Fill in a handlebars template, add in handlebars file name
+    try {
+      const story = await db.Stories.findByPk({ id });
+      res.render("result", { story });
+    } catch (err) {
+      console.log('An error occurred:', err);
+    } // Fill in a handlebars template, add in handlebars file name
   });
 
   // GET route to render all stories
