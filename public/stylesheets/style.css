@@ -4,6 +4,7 @@
   margin:0;
   box-sizing: border-box;
 }
+
 body,html{
   width: 100%;
   height: 100%;
@@ -12,13 +13,10 @@ body,html{
   background-size: 100%;
 }
 
-
 .jumbotron{
     margin-top: 5%;
-    padding: 5px;
+    padding-right: 5px;
 }
-
-
 
 p {
     line-height: 3rem;
@@ -33,7 +31,34 @@ span{
   color: #EF6C00;
 }
 
+/* template index.handlebars styling */
 .libTeaser {
   line-height: 1.5;
   font-style: italic;
+}
+
+.templateBody{
+  min-width: 90%;
+}
+
+.templateRow {
+  margin: 15px!important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 0px!important;
+  padding-right: 0px!important;
+  border: 1px solid  #e9ecef;
+  border-radius: 5px;
+}
+
+.templateCard {
+  min-height: 200px;
+  min-width: 20px!important;
+  background-color: #e9ecef!important;
+}
+
+/* create.handlebars styling */
+.col-9 {
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
