@@ -2,29 +2,18 @@
         <img class="img-fluid rounded mx-auto d-block max-width: 100%;" src="./images/toplibs.png" alt="">
     </div>
 
-    <div class="row">
+    {{#each stories}}
+    <div class="row mb-5">
         <div class="col-2"></div>
         <div class="col-10">
             <div class="card" style="width: 75%;" >
-                <img src="..." class="card-img-top" alt="Story image">
+                <!-- <img src="..." class="card-img-top" alt="Story image">> -->
                 <div class="card-body">
-                  <h5 class="card-title">Story Title</h5>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, soluta error eius asperiores distinctio facere? Unde fugit, rem natus necessitatibus quis maxime voluptatem recusandae ipsa eius harum omnis iure possimus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis distinctio ullam cumque rem explicabo! Perspiciatis, ea nostrum et praesentium temporibus ad. Accusantium autem culpa quae rerum optio, est earum quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere porro saepe dolorem labore, quaerat fugiat repellendus tempora deserunt? Rerum facilis dolore quam temporibus asperiores corporis officia tenetur ut architecto ab.</p>
-                  <a href="#" ><button class="btn btn-primary">Upvote</button></a>
+                  <h5 class="card-title">{{this.title}}</h5>
+                  <p>{{this.storyBody}}</p>
+                  {{!-- <a href="#" ><button class="btn btn-primary">Upvote</button></a> --}}
                 </div>
               </div>
         </div>
     </div>
-    <div class="row" style="padding-top: 8%;">
-        <div class="col-2"></div>
-        <div class="col-10">
-            <div class="card" style="width: 75%;">
-                <img src="..." class="card-img-top" alt="Story image">
-                <div class="card-body">
-                  <h5 class="card-title">Story Title</h5>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, soluta error eius asperiores distinctio facere? Unde fugit, rem natus necessitatibus quis maxime voluptatem recusandae ipsa eius harum omnis iure possimus! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis distinctio ullam cumque rem explicabo! Perspiciatis, ea nostrum et praesentium temporibus ad. Accusantium autem culpa quae rerum optio, est earum quis! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere porro saepe dolorem labore, quaerat fugiat repellendus tempora deserunt? Rerum facilis dolore quam temporibus asperiores corporis officia tenetur ut architecto ab.</p>
-                  <a href="#" ><button class="btn btn-primary">Upvote</button></a>
-                </div>
-              </div>
-        </div>
-    </div>
+    {{/each}}

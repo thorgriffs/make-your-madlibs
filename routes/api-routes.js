@@ -87,8 +87,8 @@ router.get("/create/:id", async (req, res) => {
 //   return res.redirect("/result/:id");
 // });
 
+// GET the completed story from the db
 router.get("/result/:id", async (req, res) => {
-  // Get the completed story from the db
   try {
     const story = await db.Stories.findByPk(req.params.id);
     res.render("result", { title: story.title, storyBody: story.storyBody } );
@@ -100,7 +100,7 @@ router.get("/result/:id", async (req, res) => {
 // GET route to render all stories
 router.get("/stories", async (req, res) => {
   try {
-    const stories = await db.Stories.findAll({});
+    const stories = await db.Stories.findAll({ raw: true});
     res.render("stories", { stories });
   } catch (err) {
     console.log('An error occurred:', err);
