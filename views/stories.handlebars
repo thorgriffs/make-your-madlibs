@@ -1,19 +1,18 @@
- <div class="jumbotron">
-        <img class="img-fluid rounded mx-auto d-block max-width: 100%;" src="./images/toplibs.png" alt="">
-    </div>
+<div class="jumbotron">
+  <img class="img-fluid rounded mx-auto d-block max-width: 100%;" src="./images/libarch.png" alt="">
+</div>
 
-    {{#each stories}}
-    <div class="row mb-5">
-        <div class="col-2"></div>
-        <div class="col-10">
-            <div class="card" style="width: 75%;" >
-                <!-- <img src="..." class="card-img-top" alt="Story image">> -->
-                <div class="card-body">
-                  <h5 class="card-title">{{this.title}}</h5>
-                  <p>{{this.storyBody}}</p>
-                  {{!-- <a href="#" ><button class="btn btn-primary">Upvote</button></a> --}}
-                </div>
-              </div>
+{{#each stories}}
+  <div class="row mb-5">
+    <div class="col-2"></div>
+    <div class="col-10">
+      <div class="card" style="width: 75%;" >
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p>{{this.storyBody}}</p>
         </div>
+      </div>
     </div>
-    {{/each}}
+  </div>
+{{/each}}
+    
