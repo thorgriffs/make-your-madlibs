@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
   try {
     // console.log("before await");
     const templates = await db.Templates.findAll({ raw: true });
-    console.log(templates);
+    // console.log(templates);
     res.render("index", { templates });
   } catch (err) {
     console.log('An error occurred:', err);
@@ -30,7 +30,7 @@ router.get("/create/:id", async (req, res) => {
   try {
     const template = await db.Templates.findByPk(req.params.id);
     const blanks = madlibs.getBlanks(template.templateBody);
-    console.log(template);
+    // console.log(template);
     res.render("create", { title: template.title, teaser: template.teaser, blanks, id: req.params.id });
   } catch (err) {
     console.log('An error occurred:', err);
@@ -46,8 +46,11 @@ router.post("/create/:id", async (req, res) => { //id?
   // need the logic to get the blanks in order
   // Read the blanks. Fill in the story.
   // Save the story.
+  console.log("this is the post route...");
+
   try {
-    req.body // { "1": "word", "2": "formId"}
+    // req.body // { "1": "word", "2": "formId"}
+    console.log(req.body);
     let templateId;
     let blanks = [];
     for (const field in req.body) {
@@ -62,24 +65,34 @@ router.post("/create/:id", async (req, res) => { //id?
     let completedStory = madlibs.formStory(templateId, blanks);
     // gives us back the string to make the storyBody
 
+    console.log(completedStory);
+
     const createStory = await db.Stories.create({
       title: req.body.title,
       storyBody: completedStory,
     });
+
     res.json(createStory); // created
+
   } catch (err) {
     console.log('An error occured:', err);
   }
   // Redirect to show completed story
-  return res.redirect("/result/:id");
-
+  res.redirect("/result/:id");
 });
-
 
 // GET the completed story from the db
 router.get("/result/:id", async (req, res) => {
+
+  console.log("this is the get /result/:id route...");
+
   try {
-    const story = await db.Stories.findByPk(req.params.id);
+    const story = await db.Stories.findByPk(
+      req.params.id
+    );
+
+    console.log(story);
+
     res.render("result", {
       title: story.title,
       storyBody: story.storyBody,
