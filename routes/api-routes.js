@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
+const madlibs = require("../lib/madlibs");
 // const madlibs = require('../lib/madlibs.js');
 
 
@@ -39,8 +40,9 @@ router.get('/', async (req, res) => {
 router.get("/create/:id", async (req, res) => {
   try {
     const template = await db.Templates.findByPk(req.params.id);
-    const blanks = madlibs.getBlanks(template);
-    res.render("create", { blanks, id: req.params.id });
+    const blanks = madlibs.getBlanks(template.templateBody);
+    console.log(template);
+    res.render("create", { title: template.title, teaser: template.teaser, blanks, id: req.params.id });
   } catch (err) {
     console.log('An error occurred:', err);
   }
@@ -88,8 +90,8 @@ router.get("/create/:id", async (req, res) => {
 router.get("/result/:id", async (req, res) => {
   // Get the completed story from the db
   try {
-    const story = await db.Stories.findByPk({ id });
-    res.render("result", { story });
+    const story = await db.Stories.findByPk(req.params.id);
+    res.render("result", { title: story.title, storyBody: story.storyBody } );
   } catch (err) {
     console.log('An error occurred:', err);
   } // Fill in a handlebars template, add in handlebars file name
