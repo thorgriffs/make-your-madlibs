@@ -1,6 +1,7 @@
 const path = require('path');
 const db = require("../models");
-const madlibs = require('../lib/madlibs');
+const madlibs = require('../lib/madlibs.js');
+const Sequelize = require('sequelize');
 
 // TODO:
 // change .catch to display error message instead of crashing server
@@ -14,12 +15,16 @@ module.exports = (app) => {
   // GET route on index page to display story title and teaser
   app.get('/', async (req, res) => {
     //retrieve all but only display title and teaser
+    console.log("before await");
     try {
-      const templates = await db.Templates.findAll({});
+      console.log("before await");
+
+      const templates = await db.Templates.findAll();
       res.render("index", { templates });
     } catch (err) {
       console.log('An error occurred:', err);
     }
+    // return res.redirect(/create/:id);
   });
 
   // GET route on create page to display form for user input
