@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
-const madlibs = require('../lib/madlibs.js');
+// const madlibs = require('../lib/madlibs.js');
 
 
 // TODO:
@@ -24,12 +24,10 @@ router.get('/', async (req, res) => {
   try {
     console.log("before await");
 
-    const templates = await db.Templates.findAll();
+    const templates = await db.Templates.findAll({ raw: true });
     console.log(templates);
 
-    res.render("index", { templates: templates });
-
-
+    res.render("index", { templates });
 
   } catch (err) {
     console.log('An error occurred:', err);
