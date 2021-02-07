@@ -22,27 +22,28 @@ app.use(express.json());
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-app.get('/', function (req, res) {
-    res.render('index');
-});
+// app.get('/', function (req, res) {
+//     res.render('index');
+// });
 
-app.get('/stories', function (req, res) {
-    res.render('stories');
-});
+// app.get('/stories', function (req, res) {
+//     res.render('stories');
+// });
 
-app.get('/create', function (req, res) {
-    res.render('create');
-});
+// app.get('/create', function (req, res) {
+//     res.render('create');
+// });
 
-app.get('/result', function (req, res) {
-    res.render('result');
-});
+// app.get('/result', function (req, res) {
+//     res.render('result');
+// });
 
 // Serve static content from the "public" directory
 app.use(express.static("public"));
 
 // // Invoke routes
-require("./routes/api-routes.js")(app);
+const routes = require("./routes/api-routes");
+app.use(routes);
 
 // templatesRouter(app);
 // storiesRouter(app);
