@@ -1,48 +1,56 @@
-<div class="row" style="margin-top: 20px;">
-  <div class="col-3">
+<div class="row">
+  <div class="col-5 formCol">
     <div class="card">
       <div class="card-body">
         <h4 class="text-center">Need assistance?</h4>
-        <img class="rounded mx-auto d-block" src="../images/robohelper.png" alt="robo helper" height="75px" width="75px">
-        <div class="row">
-          <h5 class="wordHelperTitle">Nouns-</h5>
-          <p class="helperText">Singular (e.g. boy, country, bridge, city)</p>
-          <p class="helperText">Plural (e.g. boys, countries, bridges, cities)</p>
-          <p class="helperText">Proper (e.g. Steven, Africa, London, Monday)</p>
-          <p class="helperText">Collective (e.g. family, government, audience, team, jury)</p>
-        </div>
-        <div class="row">
-          <h5 class="wordHelperTitle">Verbs-</h5>     
-          <p class="helperText">Present participle (e.g. coming, drawing, washing)</p>
-          <p class="helperText">Third person singular (e.g. watches, shrinks, does)</p>
-          <p class="helperText">Root (e.g. go, do, show, eat)</p>
-          <p class="helperText">Simple past (e.g. sang, saw, fell, gave, went)</p>
-          <p class="helperText">Past participle (e.g. sung, seen, fallen, given, gone)</p>
-        </div>
-        <div class="row">
-          <h5 class="wordHelperTitle">Adjectives-</h5>     
-          <p class="helperText">Descriptive: describes (pro)nouns (e.g. fast, hungry, flying)</p>
-          <p class="helperText">Quantitative (e.g. twenty, three, whole)</p>
-          <p class="helperText">Proper (e.g. American, Chinese, Marxist)</p>
-        </div>
-        <div class="row">
-          <h5 class="wordHelperTitle">Adverbs-</h5>     
-          <p class="helperText">Time (e.g. yesterday, tomorrow, monthly, daily, recently)</p>
-          <p class="helperText">Degree (e.g. almost, enough, just, hardly)</p>
-          <p class="helperText">Frequency (e.g. always, never, seldom, normally)</p>
-          <p class="helperText">Manner (e.g. beautifully, gorgeously, patiently)</p>
-          <p class="helperText">Place (e.g. above, below, under, within)</p>
-        </div>
+        <img class="rounded mx-auto d-block" src="../images/robohelper.png" alt="robo helper" height="75px"
+          width="75px">
+
+        <h5 class="wordHelperTitle">Nouns</h5>
+        <p class="helperText">
+          Singular (e.g. boy, country, bridge, city)<br>
+          Plural (e.g. boys, countries, bridges, cities)<br>
+          Proper (e.g. Steven, Africa, London, Monday)<br>
+          Collective (e.g. family, government, audience, team, jury)
+        </p>
+
+
+        <h5 class="wordHelperTitle">Verbs</h5>
+        <p class="helperText">
+          Present participle (e.g. coming, drawing, washing)<br>
+          Third person singular (e.g. watches, shrinks, does)<br>
+          Root (e.g. go, do, show, eat)<br>
+          Simple past (e.g. sang, saw, fell, gave, went)<br>
+          Past participle (e.g. sung, seen, fallen, given, gone)<br>
+        </p>
+
+
+        <h5 class="wordHelperTitle">Adjectives</h5>
+        <p class="helperText">
+          Descriptive: describes (pro)nouns (e.g. fast, hungry, flying)<br>
+          Quantitative (e.g. twenty, three, whole)<br>
+          Proper (e.g. American, Chinese, Marxist)
+        </p>
+
+        <h5 class="wordHelperTitle">Adverbs</h5>
+        <p class="helperText">
+          Time (e.g. yesterday, tomorrow, monthly, daily, recently)
+          Degree (e.g. almost, enough, just, hardly)
+          Frequency (e.g. always, never, seldom, normally)
+          Manner (e.g. beautifully, gorgeously, patiently)
+          lace (e.g. above, below, under, within)
+        </p>
+
       </div>
     </div>
   </div>
-  <div class="col-9">
-    <div class="card" style=" width: 30rem;">
+
+  <div class="col-7 formCol">
+    <div class="card">
       <div class="card-body">
         <form action="/create/{{id}}" data-id="{{id}}">
           <h5 class="card-title">{{title}}</h5>
           <p class="libTeaser">{{teaser}}</p>
-
 
           {{#each blanks}}
           <div class="form-group row">
@@ -55,16 +63,9 @@
             </div>
           </div>
           {{/each}}
-          <button type="submit" class="makeLib btn btn-primary" data-id="{{id}}" id="{{id}}">Make
-            Lib</button>
+          <button type="submit" class="makeLib btn btn-primary" data-id="{{id}}" id="{{id}}">Make Lib</button>
         </form>
 
-<<<<<<< HEAD
-
-
-=======
-        <button type="button" class="makeLib btn btn-primary" id="{{id}}">Make Lib</button>
->>>>>>> db1a33586e250441f03f5a88d9b5e2ee95981edb
       </div>
     </div>
   </div>
