@@ -3,11 +3,11 @@
   <div class="col-9">
     <div class="card" style=" width: 30rem;">
       <div class="card-body">
+        <form action="/create/{{id}}" data-id="{{id}}">
+          <h5 class="card-title">{{title}}</h5>
+          <p class="libTeaser">{{teaser}}</p>
 
-        <h5 class="card-title">{{title}}</h5>
-        <p class="libTeaser">{{teaser}}</p>
 
-        <form>
           {{#each blanks}}
           <div class="form-group row">
             <label for="blank-{{this.index}}" class="col-sm-6 col-form-label">
@@ -19,9 +19,11 @@
             </div>
           </div>
           {{/each}}
+          <button type="submit" class="makeLib btn btn-primary" data-id="{{id}}" id="{{id}}">Make
+            Lib</button>
         </form>
 
-        <button type="button" class="makeLib btn btn-primary" id="{{id}}">Make Lib</button>
+
 
       </div>
     </div>
