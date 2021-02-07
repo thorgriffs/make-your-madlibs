@@ -2,11 +2,24 @@
   <img class="img-fluid rounded mx-auto d-block " src="./images/LMlogo.png" alt="">
 </div>
 
-<div class="row" style="margin-top: 7%;">
+<!-- <div class="row" style="margin-top: 7%;">
   <h1>Hello</h1>
   {{#each templates }}
   <p>{{this.title}}</p>
   {{/each}}
 
 
+</div> -->
+
+<div class="row container-fluid m-auto" style="margin-top: 7%;">
+  {{#each templates}}
+  <div class="col-md-4">
+    <div class="card" style=" width: 18rem; height: 8rem; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+      <div class="card-body">
+        <a href="/create" ><h5 class="card-title" style="font-weight: bold;">{{this.title}}</h5></a>
+        <p class="libTeaser">{{this.teaser}}</p>
+      </div>
+    </div>
+  </div>
+  {{/each}}
 </div>
