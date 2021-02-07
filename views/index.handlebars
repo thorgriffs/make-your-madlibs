@@ -1,5 +1,37 @@
-<div class="jumbotron jumbotron-fluid text-center" id="header">
-    {{!-- <div class="container"> --}}
-    <h1 class="display-3" id="headertext">Mad Libs</h1>
-    {{!-- </div> --}}
-</div>
+
+<div class="jumbotron">
+      <img class="img-fluid rounded mx-auto d-block " src="./images/LMlogo.png" alt="">
+  </div>
+ 
+ <div class="row" style="margin-top: 7%;">
+          <div class="col-md-4">
+              <div class="card" style=" width: 22rem;">
+                  
+                  <div class="card-body">
+                    <a href="/create" ><h5 class="card-title">Story Title</h5></a>
+
+                    <p class="libDiscription">{{{sequelize.madlib.card-title}}}</p>
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 22rem;">
+                
+                <div class="card-body">
+                  <a href="/create" ><h5 class="card-title">Story Title</h5></a>
+
+                  <p class="libDiscription">Lib story discription </p>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card" style="width: 22rem;">
+              
+              <div class="card-body">
+                <a href="/create" ><h5 class="card-title">{{stories.getOne({where: {title: 'Story Title'} })}}</h5></a>
+
+                <p class="libDiscription">Lib story discription</p>
+              </div>
+            </div>
+      </div>
+    </div> 
