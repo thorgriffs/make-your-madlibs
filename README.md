@@ -81,6 +81,3 @@ Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan
 Any questions regarding the application can be answered at:
 
 - [Link to Github Repo](https://github.com/thorgriffs/make-your-madlibs)
-
-
-    
