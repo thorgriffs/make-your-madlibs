@@ -2,13 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const madlibs = require("../lib/madlibs");
-// const madlibs = require('../lib/madlibs.js');
-
-// TODO:
-// comment back in post route when done
 
 // Routes
-
 // Each of the below routes just handles the HTML page that the user gets sent to.
 
 // GET route on index page to display story title and teaser
@@ -32,8 +27,9 @@ router.get("/create/:id/:title", async (req, res) => {
         title: req.params.title,
       },
     });
+
     const blanks = madlibs.getBlanks(template.templateBody);
-    // console.log(template);
+
     res.render("create", {
       title: template.title,
       teaser: template.teaser,
@@ -46,17 +42,9 @@ router.get("/create/:id/:title", async (req, res) => {
 });
 
 // Render the blanks in a form via handlebars (each helper)
-// template.then((blanks) => {  dont need
 
 // POST route for creating story and create in db
 router.post("/create/:id/:title", async (req, res) => {
-  //id?
-  // req.body.... with the field names attached
-  // need the logic to get the blanks in order
-  // Read the blanks. Fill in the story.
-  // Save the story.
-  console.log("this is the post route...");
-
   try {
     // req.body // { "1": "word", "2": "formId"}
     console.log(req.body);
@@ -72,40 +60,27 @@ router.post("/create/:id/:title", async (req, res) => {
       }
     }
 
-    console.log("id:" + req.params.id);
-    console.log("blanks:" + blanks);
-    // use form story function here with blanks and id
+    // use formStory function from madlibs.js
     const completedStory = await madlibs.formStory(req.params.id, req.body);
-    // gives us back the string to make the storyBody
-
-    console.log("story:" + completedStory);
 
     const createStory = await db.Stories.create({
       title: req.params.title,
       storyBody: completedStory,
     });
 
-    // console.log(create.Story.id);
-
-    res.render("result", createStory); // created
-      // Redirect to show completed story
-    console.log("redicect");
+    res.render("result", createStory);
+    // Redirect to show completed story
     res.redirect("/result/" + createStory.id);
   } catch (err) {
     console.log("An error occured:", err);
   }
   return;
-
 });
 
 // GET the completed story from the db
 router.get("/result/:id", async (req, res) => {
-  console.log("this is the get /result/:id route...");
-
   try {
     const story = await db.Stories.findByPk(req.params.id);
-
-    console.log(story);
 
     res.render("result", {
       title: story.title,
@@ -113,7 +88,7 @@ router.get("/result/:id", async (req, res) => {
     });
   } catch (err) {
     console.log("An error occurred:", err);
-  } // Fill in a handlebars template, add in handlebars file name
+  }
 });
 
 // GET route to render all stories
