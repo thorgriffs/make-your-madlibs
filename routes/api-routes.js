@@ -48,17 +48,17 @@ router.post("/create/:id/:title", async (req, res) => {
   try {
     // req.body // { "1": "word", "2": "formId"}
     console.log(req.body);
-    let templateId;
-    const blanks = [];
-    for (const field in req.body) {
-      const number = Number(field);
-      if (isNaN(number)) {
-        // eslint-disable-next-line no-unused-vars
-        templateId = req.body[field];
-      } else {
-        blanks[number] = req.body[field];
-      }
-    }
+    // let templateId;
+    // const blanks = [];
+    // for (const field in req.body) {
+    //   const number = Number(field);
+    //   if (isNaN(number)) {
+    //     // eslint-disable-next-line no-unused-vars
+    //     templateId = req.body[field];
+    //   } else {
+    //     blanks[number] = req.body[field];
+    //   }
+    // }
 
     // use formStory function from madlibs.js
     const completedStory = await madlibs.formStory(req.params.id, req.body);
@@ -68,7 +68,7 @@ router.post("/create/:id/:title", async (req, res) => {
       storyBody: completedStory,
     });
 
-    res.render("result", createStory);
+    // res.render("result", createStory);
     // Redirect to show completed story
     res.redirect("/result/" + createStory.id);
   } catch (err) {
