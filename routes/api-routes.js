@@ -25,9 +25,13 @@ router.get("/", async (req, res) => {
 });
 
 // GET route on create page to display form for user input
-router.get("/create/:id", async (req, res) => {
+router.get("/create/:id/:title", async (req, res) => {
   try {
-    const template = await db.Templates.findByPk(req.params.id);
+    const template = await db.Templates.findOne({
+      where: {
+        title: req.params.title,
+      },
+    });
     const blanks = madlibs.getBlanks(template.templateBody);
     // console.log(template);
     res.render("create", {
@@ -45,7 +49,7 @@ router.get("/create/:id", async (req, res) => {
 // template.then((blanks) => {  dont need
 
 // POST route for creating story and create in db
-router.post("/create/:id", async (req, res) => {
+router.post("/create/:id/:title", async (req, res) => {
   //id?
   // req.body.... with the field names attached
   // need the logic to get the blanks in order
@@ -67,23 +71,31 @@ router.post("/create/:id", async (req, res) => {
         blanks[number] = req.body[field];
       }
     }
+
+    console.log("id:" + req.params.id);
+    console.log("blanks:" + blanks);
     // use form story function here with blanks and id
-    const completedStory = madlibs.formStory(id, blanks);
+    const completedStory = await madlibs.formStory(req.params.id, req.body);
     // gives us back the string to make the storyBody
 
-    console.log(completedStory);
+    console.log("story:" + completedStory);
 
     const createStory = await db.Stories.create({
-      title: req.body.title,
+      title: req.params.title,
       storyBody: completedStory,
     });
 
-    res.json(createStory); // created
+    // console.log(create.Story.id);
+
+    res.render("result", createStory); // created
+      // Redirect to show completed story
+    console.log("redicect");
+    res.redirect("/result/" + createStory.id);
   } catch (err) {
     console.log("An error occured:", err);
   }
-  // Redirect to show completed story
-  return res.redirect("/result/:id");
+  return;
+
 });
 
 // GET the completed story from the db
