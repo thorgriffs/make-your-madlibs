@@ -41,44 +41,37 @@ router.get("/create/:id", async (req, res) => {
 // template.then((blanks) => {  dont need
 
 // POST route for creating story and create in db
-router.post("/create/:id", async (req, res) => { //id?
-  // req.body.... with the field names attached
+router.post("/create/:id", async (req, res) => { 
+  // const template = await db.Templates.findByPk(req.params.id);
+  // console.log(req.params.id);
+  // var id = req.body.id;
+  // console.log(id);
+  // console.log(body);// req.body.... with the field names attached
   // need the logic to get the blanks in order
   // Read the blanks. Fill in the story.
   // Save the story.
-  console.log("this is the post route...");
+  // console.log("this is the post route...");
 
   try {
-    // req.body // { "1": "word", "2": "formId"}
-    console.log(req.body);
-    let templateId;
-    let blanks = [];
-    for (const field in req.body) {
-      const number = Number(field);
-      if (isNaN(number)) {
-        templateId = req.body[field];
-      } else {
-        blanks[number] = req.body[field];
+    // console.log(req.body);
+    var completeStory = madlibs.formStory(req.params.id, req.body);
+    const storyId = await db.Stories.findOne({
+      attributes: [
+          'id'
+      ],
+      where: {
+          storyBody: completeStory.storyBody
       }
-    }
-    // use form story function here with blanks and id
-    let completedStory = madlibs.formStory(templateId, blanks);
-    // gives us back the string to make the storyBody
-
-    console.log(completedStory);
-
-    const createStory = await db.Stories.create({
-      title: req.body.title,
-      storyBody: completedStory,
     });
+    console.log(storyId);
 
-    res.json(createStory); // created
+    res.json("result", completeStory); // created
 
   } catch (err) {
     console.log('An error occured:', err);
   }
-  // Redirect to show completed story
-  res.redirect("/result/:id");
+
+  res.redirect("/result/" + storyId);
 });
 
 // GET the completed story from the db
@@ -87,11 +80,9 @@ router.get("/result/:id", async (req, res) => {
   console.log("this is the get /result/:id route...");
 
   try {
-    const story = await db.Stories.findByPk(
-      req.params.id
-    );
+    const story = await db.Stories.findByPk(req.params.id);
 
-    console.log(story);
+    console.log(story.title, story.storyBody);
 
     res.render("result", {
       title: story.title,

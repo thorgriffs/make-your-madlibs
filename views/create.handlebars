@@ -48,7 +48,7 @@
   <div class="col-7 formCol">
     <div class="card">
       <div class="card-body">
-        <form action="/create/{{id}}" data-id="{{id}}">
+        <form action="/create/{{id}}" method="post" data-id="{{id}}">
           <h5 id="createTitle">{{title}}</h5>
           <p class="libTeaser">{{teaser}}</p>
 
@@ -58,7 +58,7 @@
               {{this.variant}} {{this.category}}
             </label>
             <div class="col-sm-6">
-              <input name="template-{{id}}" type="hidden">
+              {{!-- <input name="template.id" type="hidden"> --}}
               <input id="blank-{{@index}}" name="{{@index}}" type="text" class="form-control">
             </div>
           </div>
