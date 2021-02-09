@@ -1,6 +1,7 @@
-# LibMaker 3000  [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
-    
-    
+# LibMaker 3000  
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
+
 MIT
 Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan Munoz]
 
@@ -18,10 +19,8 @@ Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan
 - [Testing](#Testing)
 - [Contribution](#Contribution)
 - [Questions](#Questions)
-    
 
 ---
-
 
 ## Description
 
@@ -29,18 +28,16 @@ Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan
 
 ---
 
-
 ## Technologies
+
 #### All the technologies use in this application are:
 
-    bad-words
     express
     express-handlebars
     madlibs-template-parser
     mysql
     mysql2
     sequelize
-
 
 ---
 
@@ -57,6 +54,7 @@ Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan
 #### Usage for this application:
 
 #### Creating and posting madlibs to share with friends!
+[Live App Link](https://makeyourmadlib.herokuapp.com/)
 
 ---
 
@@ -64,7 +62,7 @@ Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan
 
 #### How to test application:
 
-#### run `npm start`
+#### run `npm test`
 
 ---
 
