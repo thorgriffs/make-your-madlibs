@@ -28,6 +28,10 @@ a {
   color: #ef6c00 !important;
 }
 
+.container {
+  padding-bottom: 15px;
+}
+
 .jumbotron {
   margin-top: 5%;
   padding-right: 5px;
