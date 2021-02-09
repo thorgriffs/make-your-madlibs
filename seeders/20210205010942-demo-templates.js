@@ -26,7 +26,28 @@ module.exports = {
         templateBody: "Once there was a strange time where a <properNoun> took over the world and made us all stay <descriptiveAdjective> at home. So we <simplePastVerb> into our imagination and found out the key to <descriptiveAdjective> was all about wearing <singularNoun> with <singularNoun>. It turned out that this was also the trick to turning on our <properNoun> and getting to do everything you love all at once. Now, we can eat <singularNoun> while playing <singularNoun>, or search for <singularNoun> while singing <singularNoun>. One time, we even turned <singularNoun> into a <properNoun>. Don't believe us? Just say <singularNoun> and we'll show you.",
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        title: "Our Solar System",
+        teaser: "When we look up into the sky on a summer night...",
+        templateBody: "When we look up into the sky on a/an <descriptiveAdjective> summer night, we see millions of tiny spots of light. Each one represents a/an <singularNoun> which is the center of a/an <descriptiveAdjective> solar system with dozens of <pluralNoun> revolving <mannerAdverb> around a distant sun. Sometimes these suns expand and begin <presentParticipleVerb> their neighbors. Soon they will become so big, they will turn into <pluralNoun>. Eventually they subside and become <descriptiveAdjective> giants or perhaps black <pluralNoun>. Our own planet, which we call <properNoun>, circles around our <descriptiveAdjective> sun <quantitativeAdjective> times every year. There are eight other planets in our solar system. They are named <properNoun>, <properNoun>, <properNoun>, <properNoun>, <properNoun>, <properNoun>, Jupiter, and Mars. Scientists who study these planets are called <pluralNoun>.",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: "Vacations",
+        teaser: "A vacation is when you take a trip to some...",
+        templateBody: "A vacation is when you take a trip to some <descriptiveAdjective> place with your <descriptiveAdjective> family. Usually you go to some place that is near a/an <singularNoun> or up on a/an <singularNoun>. A good vacation place is one where you can ride <pluralNoun> or play <singularNoun> or go hunting for <pluralNoun>. I like to spend my time <presentParticipleVerb> or <presentParticipleVerb>. When parents go on a vacation, they spend their time eating three <pluralNoun> a day, and fathers play golf, and mothers sit around <presentParticipleVerb>. Last summer, my little brother fell in a/an <singularNoun> and got poison <singularNoun> all over his <singularNoun>. My family is going to go to the <properNoun>, and I will practice <presentParticipleVerb>. Parents need vacations more than kids because parents are always very <descriptiveAdjective> and because they have to work <quantitativeAdjective> hours every day all year making enough <pluralNoun> to pay for the vacation.",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        title: "Comic Superhero Movie",
+        teaser: "Meet our hero, a super-intelligent...",
+        templateBody: "Meet our hero <properNoun>, a super-intelligent <properNoun>. A run-in with the <properNoun> military leads him to create his alter-ego <properNoun>, a <descriptiveAdjective> giant capable of great destruction. He <mannerAdverb> battles the military with his girlfriend <properNoun>. Eventually it is discovered that our hero's long-time colleague <properNoun>, distinguished by his <singularNoun>, is trying to turn <properNoun> into a weapon, leading to a climactic, if pointless, battle in downtown <properNoun> with an evil version of the same giant alter-ego called <properNoun>. Eventually the enemy is subdued by <presentParticipleVerb> him with a <singularNoun>. In the final reel, <properNoun> appears to propose joining him in a <singularNoun>.",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
 
   },
