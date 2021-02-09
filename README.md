@@ -6,6 +6,11 @@ The LibMaker 3000 is a Mad Lib generator that takes user input and plugs it into
 
 ![Screenshot](./public/images/updated-screenshot.png)
 
+
+# Application .GIF
+
+![Screenshot](./public/images/libVid.gif)
+
 ## Table of Contents
 
 - [Technologies](#technologies)
@@ -37,7 +42,7 @@ To install this program you will need to run:
 ## Usage
 
 Creating and posting madlibs to share with friends!
-[Libmaker 3000](https://makeyourmadlib.herokuapp.com/)
+[LibMaker 3000](https://makeyourmadlib.herokuapp.com/)
 
 ## Testing
 
