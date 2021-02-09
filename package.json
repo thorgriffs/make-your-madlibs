@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "lint": "eslint --ext node_modules/*.js,*models/index.js,*public/index.js --quiet",
+    "lint": "eslint . --ignore-pattern node_modules/*.js,*/js/,*/models/,seeders/*.js --quiet",
     "test": "npm run lint",
     "start": "node server.js",
     "dev": "nodemon server.js"

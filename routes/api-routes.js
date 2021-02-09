@@ -75,13 +75,10 @@ router.get("/result/:id", async (req, res) => {
 // GET route to render all stories
 router.get("/stories", async (req, res) => {
   try {
-    const stories = await db.Stories.findAll(
-      {
-        raw: true,
-        order: [
-          ['id', 'DESC']
-        ]
-       });
+    const stories = await db.Stories.findAll({
+      raw: true,
+      order: [["id", "DESC"]],
+    });
     res.render("stories", { stories });
   } catch (err) {
     console.log("An error occurred:", err);

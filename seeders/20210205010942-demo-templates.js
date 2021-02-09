@@ -1,6 +1,8 @@
+/* eslint-disable */
 'use strict';
 
 module.exports = {
+  // eslint-disable-line no-alert
   up: async (queryInterface, Sequelize) => {
 
     await queryInterface.bulkInsert('Templates', [
