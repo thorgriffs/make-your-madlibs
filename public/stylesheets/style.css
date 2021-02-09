@@ -94,10 +94,11 @@ span {
   padding-right: 0px !important;
   border: 1px solid #F0F0F2;
   border-radius: 5px;
+  min-height: 100vh;
 }
 
 .templateCard {
-  min-height: 200px;
+  height: 250px;
   min-width: 20px !important;
   background-color: #F0F0F2 !important;
 }
