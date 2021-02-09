@@ -24,13 +24,12 @@ Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan
 
 ## Description
 
-### This application is a Madlib genereator, using user input it takes the data and plugs it into story pre written story templates and saves the result to a database and displays the created Madlib
-
+The LibMaker 3000 is a Mad Lib generator that takes user input and plugs it into a pre-defined story template.  The completed Mad Lib story is displayed and saved to the database to be later viewed in the Archives.
 ---
 
 ## Technologies
 
-#### All the technologies use in this application are:
+This application utilizes the following dependencies:
 
     express
     express-handlebars
@@ -53,8 +52,8 @@ Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan
 
 #### Usage for this application:
 
-#### Creating and posting madlibs to share with friends!
-[Live App Link](https://makeyourmadlib.herokuapp.com/)
+Creating and posting madlibs to share with friends!
+[Libmaker 3000](https://makeyourmadlib.herokuapp.com/)
 
 ---
 
@@ -70,7 +69,7 @@ Copyright (c) [2021] [Kelli King, Austyn Whaley, Mengmei Tu, Evan Robinson, Juan
 
 #### The guidelines for contributon to this application are as follows:
 
-#### there are no contributions
+Fork the repo and submit a pull request.
 
 ---
 
