@@ -6,12 +6,12 @@
 <div class="row templateRow container-fluid m-auto " style="margin-top: 7%;">
   {{#each templates}}
   <div class="col-md-4">
-    <div data-aos="zoom-in" class="card templateCard m-2" style="font-family: 'Roboto', sans-serif;">
-      <div class="card-body templateBody">
+    <div data-aos="zoom-in" class="card templateCard m-2 text-center">
+      <div class="card-body templateBody mt-4">
         <a href="/create/{{this.id}}/{{this.title}}">
-          <h5 class="card-title" style="font-weight: bold;">{{this.title}}</h5>
+          <h3 class="card-title" style="font-weight: bold;">{{this.title}}</h5>
         </a>
-        <p class="libTeaser">{{this.teaser}}</p>
+        <p class="libTeaser mt-4">{{this.teaser}}</p>
       </div>
     </div>
   </div>
