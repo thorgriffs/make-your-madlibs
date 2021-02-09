@@ -8,15 +8,13 @@ The LibMaker 3000 is a Mad Lib generator that takes user input and plugs it into
 
 ## Table of Contents
 
-- [LibMaker 3000](#libmaker-3000)
-  - [Table of Contents](#table-of-contents)
-  - [Technologies](#technologies)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Testing](#testing)
-  - [Contribution](#contribution)
-  - [Questions](#questions)
-  - [License](#license)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contribution](#contribution)
+- [Questions](#questions)
+- [License](#license)
 
 ## Technologies
 
