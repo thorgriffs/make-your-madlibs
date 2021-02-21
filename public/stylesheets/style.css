@@ -55,6 +55,11 @@ footer {
   line-height: 3rem;
 }
 
+.login {
+  line-height: 3rem;
+}
+
+
 .btn {
   margin-top: 5%;
   background-color: #ef6c00 !important;
@@ -148,5 +153,10 @@ a:hover {
 
 /* stories */
 #storiesCard {
+  background-color: #F0F0F2;
+}
+
+/* login */
+#loginCard {
   background-color: #F0F0F2;
 }

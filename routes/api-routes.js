@@ -3,6 +3,9 @@ const router = express.Router();
 const db = require("../models");
 const madlibs = require("../lib/madlibs");
 
+
+
+
 // Routes
 
 // GET route on index page to display story title and teaser
