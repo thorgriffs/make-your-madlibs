@@ -43,5 +43,13 @@ user.beforeCreate((user, options) => {
 });
 
 user.prototype.validPassword = function(password){
-  
-}
+  return bcrypt.compareSync(password, this.password);
+};
+
+//create all the defined tables in this database
+
+sequelize.sync()
+  .then(() => console.log('user tables has been successfully created if one does not exist'))
+  .catch(error => console.log('error occurred', error ));
+
+  module.exports = user;
