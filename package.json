@@ -8,7 +8,6 @@
     "test": "npm run lint",
     "start": "node server.js",
     "watch": "nodemon"
-    
   },
   "repository": {
     "type": "git",
