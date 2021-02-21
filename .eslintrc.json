@@ -12,6 +12,7 @@
     "plugins": [
         "prettier"
     ],
+    "ignorePatterns": ["node_modules/*.js", "public/js/*.js"],
     "rules": {
         "array-callback-return": "error",
         "camelcase": "error",
