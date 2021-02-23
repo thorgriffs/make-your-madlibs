@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const madlibs = require("../lib/madlibs");
+var db = require("../models");
+var passport = require("../config/passport");
 
 
 
