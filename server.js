@@ -1,6 +1,7 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const passport = require("./config/passport");
+var session = require("express-session");
+var passport = require("./config/passport");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -27,7 +28,7 @@ app.set("view engine", "handlebars");
 // Serve static content from the "public" directory
 app.use(express.static("public"));
 
-// // Invoke routes
+// Invoke routes
 const routes = require("./routes/api-routes");
 app.use(routes);
 
