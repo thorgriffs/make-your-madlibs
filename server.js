@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const session = require("express-session");
 const mysql = require("mysql");
 const exphbs = require("express-handlebars");
@@ -7,20 +8,27 @@ const dotenv = require('dotenv');
 
 dotenv.config({ path: './.env'});
 
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-//mysql
+/*
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DATABASE
-});
+});*/
+
+
 
 // We need to use sessions to keep track of our user's login status
 // Creating express app and configuring middleware needed for authentication
+
+
+
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
