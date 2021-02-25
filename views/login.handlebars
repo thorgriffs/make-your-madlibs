@@ -1,19 +1,17 @@
-<div data-aos="zoom-in-down" class="jumbotron">
-  <img class="img-fluid rounded mx-auto d-block " src="./images/LMlogo.png" alt="">
-</div>
 
-<div class="row container-fluid pb-4 mb-5" style="padding-top: 7%;">
-  <div class="col-12">
-    <div data-aos="flip-left" class="card text-center" style="width:500px">
-      <div class="card-body">
-        login
+<div class="jumbotron" data-aos="zoom-in-down">
+	<div class="d-flex justify-content-center h-100">
+		<div data-aos="flip-up" class="card-header" id="loginCard" style="width: 100%;">
+			<div class="card-header text-center" style="width: 100%;">
+        <h1>login</h1>
       </div>
-      <form method="post" action="/api/login">
+        <form method="post" action="/api/login" class="text-center" style="width: 100%;">
         Email: <input type="email" name="email" required /> </br>
         Password: <input type="password" name="password" required /> </br>
-    <button>Login</button>
-  </form>
-    </div>
+        <button>Login</button>
+        </form>
+      </div>
   </div>
+</div>
 </div>
 
