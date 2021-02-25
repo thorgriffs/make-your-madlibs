@@ -7,7 +7,7 @@
     "lint": "eslint . --ignore-pattern node_modules/*.js,*/js/,*/models/,seeders/*.js --quiet",
     "test": "npm run lint",
     "start": "node server.js",
-    "watch": "nodemon"
+    "watch": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "eslint": "^7.19.0",
