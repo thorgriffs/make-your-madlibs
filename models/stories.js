@@ -1,6 +1,7 @@
 //create stories model
 module.exports = (sequelize, DataTypes) => {
     const Stories = sequelize.define("Stories", {
+      
       title: {
         type: DataTypes.STRING,
         allowNull: false,
