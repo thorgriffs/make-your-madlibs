@@ -41,6 +41,7 @@ app.use(require("./routes/html-routes.js"));
 app.use(require("./routes/api-routes.js"));
 // Start server listening
 
+
 // Syncing our database and logging a message to the user upon success
 
 db.sequelize.sync({}).then(() => {

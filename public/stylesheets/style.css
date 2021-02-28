@@ -160,3 +160,17 @@ a:hover {
 #loginCard {
   background-color: #F0F0F2;
 }
+
+/* button */
+
+.upvote-button{
+  text-align: center;
+  margin-top: 5%;
+  background-color: #ef6c00 !important;
+  border-color: #ef6c00 !important;
+  padding-left: 15% !important;
+  padding-right: 15% !important;
+  font-size: 18px !important;
+  
+}
+
