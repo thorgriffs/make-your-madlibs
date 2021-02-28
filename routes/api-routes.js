@@ -27,7 +27,7 @@ var passport = require("../config/passport");
         password,
       })
         .then(function() {
-          res.redirect('/members');
+          res.redirect('/login');
         })
         .catch(function(err) {
           res.status(401).json(err);
