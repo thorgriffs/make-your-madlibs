@@ -27,7 +27,7 @@ var passport = require("../config/passport");
         password,
       })
         .then(function() {
-          res.redirect('/login');
+          res.redirect('/');
         })
         .catch(function(err) {
           res.status(401).json(err);
@@ -139,6 +139,22 @@ router.get("/stories", async (req, res) => {
     console.log("An error occurred:", err);
   }
 });
+
+// POST upvote a story
+
+
+
+router.post("/upvote", async (req, res) => {
+  try {
+    const { id } = req.body
+    const story = await db.Stories.findByPk(id);
+    story.update({upvotes: ++story.upvotes});
+    res.json(story);
+  } catch (err) {
+    console.log("An error occurred:", err);
+  }
+});
+
 
 
 

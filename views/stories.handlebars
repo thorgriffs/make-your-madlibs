@@ -12,11 +12,10 @@
           {{this.title}}</h5>
           
           <p class="pl-4 pr-4 pb-2">{{this.storyBody}}</p>
-          <form action="/upvote">
-            <input type="hidden" value="{{this.storyId}}">
-            <input type="submit">
-            
-          </form>
+          
+          <button class="upvote-button" value="{{this.id}}">upvote</button>
+          
+          
       </div>
     </div>
   </div>
