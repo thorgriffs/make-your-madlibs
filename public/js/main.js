@@ -17,9 +17,17 @@ const upvoteEvent = (e) => {
             alert(JSON.stringify(response.error));
        } else {
           console.log(response);
+
+          response.upvotes({id: e.target.text})
+
+          
+
           // get the updated upvotes count - response.upvotes
           // Make the text for the button - "Like " + new upvotes
           // e.target.text = new text 
+
+          
+
          } 
     })
     .catch(err => {
