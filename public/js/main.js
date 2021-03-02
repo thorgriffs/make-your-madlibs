@@ -1,6 +1,6 @@
 window.onload = () => {
 const upvoteEvent = (e) => {
-    console.log(e.target.value);
+    console.log('>>> Target Value',e.target.value);
     fetch(
         '/upvote',
         {
@@ -18,17 +18,12 @@ const upvoteEvent = (e) => {
        } else {
           console.log(response);
 
-          response.upvotes({id: e.target.text})
+          e.target.innerHTML = 'Like '+response.upvotes
 
-          
-
-          // get the updated upvotes count - response.upvotes
-          // Make the text for the button - "Like " + new upvotes
-          // e.target.text = new text 
-
-          
-
+        
          } 
+
+        
     })
     .catch(err => {
         alert(err);
