@@ -142,9 +142,19 @@ router.get("/stories", async (req, res) => {
 
 // POST upvote a story
 
+const verifyUserMiddleware = (req, res, next) => {
+  //  check for login 
+  console.log('checking for login');
+  if ( req.user ) {
+    next();
+  } else {
+    const err = new Error('You need to be logged in to like the post');
+    res.status(500).json({ error: err.message});// next(err);
+  }
+  //pass the control to next function.
+}
 
-
-router.post("/upvote", async (req, res) => {
+router.post("/upvote", verifyUserMiddleware, async (req, res) => {
   try {
     const { id } = req.body
     const story = await db.Stories.findByPk(id);
